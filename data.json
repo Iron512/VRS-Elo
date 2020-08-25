@@ -1,1 +1,52 @@
-{"first": 40}
+{
+  "players": [
+    {
+      "name": "Ivan",
+      "rating": "1600",
+      "matches":0
+    },
+    {
+      "name": "Gian",
+      "rating": "1600",
+      "matches":0
+    },
+    {
+      "name": "Gianler",
+      "rating": "1600",
+      "matches":0
+    },
+    {
+      "name": "Morens",
+      "rating": "1600",
+      "matches":0
+    },
+    {
+      "name": "Fonta",
+      "rating": "1600",
+      "matches":0
+    },
+    {
+      "name": "Paco",
+      "rating": "1600",
+      "matches":0
+    }
+  ],
+  "k-factor": 18,
+  "evaluation": {
+    "law": {
+      "law": 65,
+      "out": 0,
+      "ren": 20
+    },
+    "out": {
+      "law": 0,
+      "out": 72,
+      "ren": 0
+    },
+    "ren": {
+      "law": 0,
+      "out": 0,
+      "ren": 90
+    }
+  }
+}

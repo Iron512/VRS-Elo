@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bang! VRS crew Elo rating</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<!--jQuery-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Bootstrap + Font Awesome-->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var userdata = {}
+
+		$.when(
+			$.ajax({
+				 url: "/rawdata/",
+                    type: "get",
+                    data: {
+                        "code": '{{ visualization_token }}'
+                    },
+                    success: function(response) {
+                        userdata = JSON.parse(response)["players"]
+                    },
+                    error: function(xhr) {
+                         //Do Something to handle error
+                    }
+			})).then(
+				function( data, textStatus, jqXHR ) {
+					console.log(userdata)
+
+					userdata.sort(function(a,b) {return b.rating-a.rating})
+
+					var text = '<table class="table text-center"><thead class="thead-dark"><tr><th scope="col">PLAYER</th><th scope="col">RATING</th><th scope="col">MATCHES</th></tr></thead><tbody>'
+
+					userdata.forEach(function(item, index) {
+						text = text + "<tr><td>" + item.name + "</td><td>" + item.rating + "</td><td>" + item.matches +  "</td></tr>"
+					})
+
+					text = text + "</tbody></table>"
+		
+					$("#scoringboard").html(text)
+		})
+
+	</script>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div id="scoringboard" class="container col-sm-10">
+				
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+	</div>
+</body>
+</html>
