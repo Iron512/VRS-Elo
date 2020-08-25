@@ -3,22 +3,22 @@
     {
       "name": "Ivan",
       "rating": 1762,
-      "matches": 5,
+      "matches": 5
     },
     {
       "name": "Gian",
       "rating": 1585,
-      "matches": 5,
+      "matches": 5
     },
     {
       "name": "Gianler",
       "rating": 1750,
-      "matches": 5,
+      "matches": 5
     },
     {
       "name": "Morens",
       "rating": 1668,
-      "matches": 5,
+      "matches": 5
     },
     {
       "name": "Fonta",
@@ -28,7 +28,7 @@
     {
       "name": "Paco",
       "rating": 1553,
-      "matches": 5,
+      "matches": 5
     }
   ],
   "k-factor": 18,
