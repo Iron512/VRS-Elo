@@ -2,33 +2,33 @@
   "players": [
     {
       "name": "Ivan",
-      "rating": 1762,
-      "matches": 5
+      "rating": 1600,
+      "matches": 0
     },
     {
       "name": "Gian",
-      "rating": 1585,
-      "matches": 5
+      "rating": 1600,
+      "matches": 0
     },
     {
       "name": "Gianler",
-      "rating": 1750,
-      "matches": 5
+      "rating": 1600,
+      "matches": 0
     },
     {
       "name": "Morens",
-      "rating": 1668,
-      "matches": 5
+      "rating": 1600,
+      "matches": 0
     },
     {
       "name": "Fonta",
-      "rating": "1600",
+      "rating": 1600,
       "matches": 0
     },
     {
       "name": "Paco",
-      "rating": 1553,
-      "matches": 5
+      "rating": 1600,
+      "matches": 0
     }
   ],
   "k-factor": 18,

@@ -1,4 +1,4 @@
-from flask import Flask, request, session, redirect, url_for, render_template
+from flask import Flask, request, session, redirect, url_for, render_template, jsonify
 from code import *
 
 import os
@@ -7,8 +7,6 @@ import json
 task = Flask(__name__)
 access_token = str(os.environ.get('ACCESS_TOKEN'))
 visualization_token = str(os.environ.get('VISUALIZATION_TOKEN'))
-session_secret_key = str(os.environ.get('SESSION_SECRET_KEY'))
-task.secret_key = session_secret_key
 
 data = {}
 
@@ -20,7 +18,7 @@ def index(data=data):
 
     return render_template("index.html", visualization_token=visualization_token)
 
-@task.route('/update/', methods=['GET'])
+@task.route('/update/', methods=['POST'])
 def update(data=data):
     if data == {}:
         data = load_raw()
@@ -29,33 +27,16 @@ def update(data=data):
     kfactor = data["k-factor"]
     keval = data["evaluation"]
 
-    if request.args.get('code') == None:
+    if request.get_json()['code'] == None:
         return "<h2>This area is forbidden without a code</h2>"
 
-    code = request.args.get('code')
+    code = request.get_json()['code']
     if code != access_token:
         return "<h2>The code "+code+" is not correct<h2>"
 
     #code is correct, we can perform the operation
 
-    match = {
-      "law": [
-        "Ivan",
-        "Paco"
-      ],
-      "out": [
-        "Gianler",
-        "Morens"
-      ],
-      "ren": [
-        "Gian"
-      ],
-      "win": "law",
-      "alive": [
-        "Ivan",
-        "Morens"
-      ]
-    }
+    match = request.get_json()['match']
 
     data = update_ratings(data, keval, kfactor, match)
     store_raw(data)

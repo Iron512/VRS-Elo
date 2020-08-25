@@ -1,6 +1,7 @@
 import json
 import sys
 import math
+import copy
 
 def load_raw(): 
     with open("data.json") as fi:
@@ -13,7 +14,7 @@ def store_raw(data):
         json.dump(data, fo)
 
 def update_ratings(data, keval, kfact, match):
-    tmp_users = data["players"]
+    tmp_users = copy.deepcopy(data["players"])
 
     avg_law_opponent = 0
     avg_out_opponent = 0
