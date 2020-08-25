@@ -2,6 +2,7 @@ from flask import Flask, request, session, redirect, url_for
 from code import *
 
 import os
+import json
 
 task = Flask(__name__)
 access_token = str(os.environ.get('ACCESS_TOKEN'))
@@ -19,6 +20,9 @@ def homepage(data=data):
 
 @task.route('/set/', methods=['GET'])
 def set(data=data):
+    if data == {}:
+        data = load_raw()
+
     if request.args.get('code') == None:
         return "<h2>This area is forbidden without a code</h2>"
 
@@ -38,6 +42,9 @@ def set(data=data):
 
 @task.route('/rawdata/', methods=['GET'])
 def get_rawdata(data=data):
+    if data == {}:
+        data = load_raw()
+    
     if request.args.get('code') == None:
         return "<h2>This area is forbidden without a code</h2>"
 
@@ -45,4 +52,4 @@ def get_rawdata(data=data):
     if code != access_token:
         return "<h2>The code "+code+" is not correct<h2>"
 
-    return str(data)
+    return json.dumps(data)
