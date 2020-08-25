@@ -1,1 +1,52 @@
-{"players": [{"name": "Ivan", "rating": 1762, "matches": 5, "side": "law", "expected": 0.6199413590445233, "actual": 0.73}, {"name": "Gian", "rating": 1585, "matches": 5, "side": "ren", "expected": 0.36259162325551547, "actual": 0.19}, {"name": "Gianler", "rating": 1750, "matches": 5, "side": "out", "expected": 0.6779754570346743, "actual": 0.05}, {"name": "Morens", "rating": 1668, "matches": 5, "side": "out", "expected": 0.5634520442378744, "actual": 0.12}, {"name": "Fonta", "rating": "1600", "matches": 0}, {"name": "Paco", "rating": 1553, "matches": 5, "side": "law", "expected": 0.3236983305072631, "actual": 0.66}], "k-factor": 18, "evaluation": {"law": {"law": 73, "out": 12, "ren": 26}, "out": {"law": 12, "out": 80, "ren": 12}, "ren": {"law": 12, "out": 12, "ren": 98}}}
+{
+  "players": [
+    {
+      "name": "Ivan",
+      "rating": 1762,
+      "matches": 5,
+    },
+    {
+      "name": "Gian",
+      "rating": 1585,
+      "matches": 5,
+    },
+    {
+      "name": "Gianler",
+      "rating": 1750,
+      "matches": 5,
+    },
+    {
+      "name": "Morens",
+      "rating": 1668,
+      "matches": 5,
+    },
+    {
+      "name": "Fonta",
+      "rating": "1600",
+      "matches": 0
+    },
+    {
+      "name": "Paco",
+      "rating": 1553,
+      "matches": 5,
+    }
+  ],
+  "k-factor": 18,
+  "evaluation": {
+    "law": {
+      "law": 73,
+      "out": 12,
+      "ren": 26
+    },
+    "out": {
+      "law": 12,
+      "out": 80,
+      "ren": 12
+    },
+    "ren": {
+      "law": 12,
+      "out": 12,
+      "ren": 98
+    }
+  }
+}
