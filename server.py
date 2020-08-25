@@ -35,3 +35,14 @@ def set(data=data):
 
 
     return redirect(url_for('homepage'))
+
+@task.route('/rawdata/', methods=['GET'])
+def get_rawdata(data=data):
+    if request.args.get('code') == None:
+        return "<h2>This area is forbidden without a code</h2>"
+
+    code = request.args.get('code')
+    if code != access_token:
+        return "<h2>The code "+code+" is not correct<h2>"
+
+    return str(data)
