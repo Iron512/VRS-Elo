@@ -25,7 +25,7 @@ def update(data=data):
     if data == {}:
         data = load_raw()
     
-    #k factor and evaluation matrix is loaded.
+    #k factor and evaluation matrix is loaded
     kfactor = data["k-factor"]
     keval = data["evaluation"]
 
@@ -37,7 +37,28 @@ def update(data=data):
         return "<h2>The code "+code+" is not correct<h2>"
 
     #code is correct, we can perform the operation
-    #IN DEVELOPMENT
+
+    match = {
+      "law": [
+        "Ivan",
+        "Paco"
+      ],
+      "out": [
+        "Gianler",
+        "Morens"
+      ],
+      "ren": [
+        "Gian"
+      ],
+      "win": "law",
+      "alive": [
+        "Ivan",
+        "Morens"
+      ]
+    }
+
+    data = update_ratings(data, keval, kfactor, match)
+    store_raw(data)
 
     return redirect(url_for('index'))
 
